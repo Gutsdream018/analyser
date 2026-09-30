@@ -189,3 +189,4 @@ MarketPulse is a minimal full-stack Indian stock market intelligence dashboard w
 ├── app/                             # Active Next.js App Router (connects to MarketDashboard)
 └── README.md                        # Project documentation & run guide
 ```
+# analyser
