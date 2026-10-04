@@ -1,0 +1,122 @@
+import { AiDailyBrief, AttributionReport } from '@/types/analysis';
+
+export const mockAiDailyBrief: AiDailyBrief = {
+  title: 'Indian Market 60-Second Intelligence Synthesis',
+  timestamp: 'Updated 15:30 IST • Market Close',
+  confidenceScore: 94,
+  executiveSummary: 'NIFTY (+142.6 pts, +0.58%) rallied past the 24,550 resistance cluster fueled by robust institutional buying in private banking and automotive heavyweights, overriding mild caution in IT exports.',
+  signal: {
+    title: 'Headline Signal: Bullish Continuation with Broadening Participation',
+    headline: 'NIFTY consolidates above 24,550 on heavy volumes; Bank Nifty breaks 52,400 with fresh open interest build-up.',
+    keyPoints: [
+      'NIFTY 50 closed at 24,584.20 (+0.58%), printing higher daily highs for the 3rd consecutive session.',
+      'Bank Nifty surged +0.79% to 52,410.85, registering strong long build-up in HDFC Bank and ICICI Bank.',
+      'India VIX softened by -3.61% to 12.82, reflecting declining option pricing premiums and benign market risk perceptions.',
+    ],
+  },
+  context: {
+    macroSummary: 'FIIs turned aggressive net buyers in the cash segment (+₹1,285 Cr) alongside persistent domestic mutual fund inflows (+₹852 Cr). Crude oil stability around $71.85/bbl continues to act as a macroeconomic anchor.',
+    fiiDiiFlowText: 'Combined institutional net cash absorption reached +₹2,137 Cr today, marking positive cumulative institutional flows for 4 consecutive sessions.',
+    crudeAndCurrencyText: 'Brent Crude settled down -1.70% at $71.85; USD/INR remained tightly bounded between 83.65 and 83.72.',
+  },
+  marketBreadthSynthesis: 'Healthy internal participation: 1,485 advances outpaced 812 declines across NSE (A/D ratio 1.83). Midcap 100 gained +0.90%, demonstrating healthy risk appetite beyond index heavyweights.',
+  sectorLeadership: {
+    leading: ['Auto (+2.14%)', 'Metals (+1.62%)', 'Banking (+0.79%)', 'Energy (+0.88%)'],
+    lagging: ['Real Estate (-1.15%)', 'IT (-0.27%)'],
+    commentary: 'Automotive stocks saw widespread pre-festive channel check upgrades. Metals gained on Asian stimulus follow-through, while Real Estate experienced profit-taking after recent multi-week rallies.',
+  },
+  derivativesView: {
+    pcrAnalysis: 'NIFTY Put-Call Ratio (PCR) stands at 1.18, indicating mild put writing bias at 24,500 and 24,400 strikes.',
+    maxPainLevel: 24550,
+    oiClusterText: 'Highest Call Open Interest remains clustered at 24,800 (immediate ceiling), while highest Put OI sits securely at 24,400 (primary floor).',
+  },
+  whatToWatch: [
+    '24,600 ATM straddle premium decay heading into weekly expiry.',
+    'Auto sales monthly dispatches data release on 1st October.',
+    'RBI MPC commentary and global cues from US manufacturing PMI print.',
+    'Sustained FII cash inflows above ₹1,000 Cr daily threshold.',
+  ],
+};
+
+export const mockAttributionReport: AttributionReport = {
+  indexSymbol: 'NIFTY 50',
+  indexChangePoints: 142.60,
+  indexChangePercent: 0.58,
+  timestamp: '28 Sep 2026 • 15:30 IST',
+  topPositiveContributors: [
+    {
+      symbol: 'HDFCBANK',
+      name: 'HDFC Bank Ltd',
+      priceChangePercent: 1.29,
+      pointsContributed: 38.4,
+      direction: 'positive',
+      observedData: 'Heavyweight stock rose ₹21.40 (+1.29%) on 1.3x 20-day average volume.',
+      aiExplanation: 'Institutional repositioning ahead of Q2 deposit growth disclosures; short-covering triggered above ₹1,665 level.',
+    },
+    {
+      symbol: 'RELIANCE',
+      name: 'Reliance Industries Ltd',
+      priceChangePercent: 1.15,
+      pointsContributed: 32.1,
+      direction: 'positive',
+      observedData: 'Stock gained ₹34.20 (+1.15%) with 8.4M shares traded on NSE.',
+      aiExplanation: 'Refining margin uptick and telecom subscriber ARPU resilience supported sentiment.',
+    },
+    {
+      symbol: 'M&M',
+      name: 'Mahindra & Mahindra Ltd',
+      priceChangePercent: 3.44,
+      pointsContributed: 26.8,
+      direction: 'positive',
+      observedData: 'Surged ₹104.50 (+3.44%) on 1.9x average volume, touching intraday high of ₹3,165.',
+      aiExplanation: 'Festive season order pipeline announcements and strong tractor dispatch expectations.',
+    },
+    {
+      symbol: 'ICICIBANK',
+      name: 'ICICI Bank Ltd',
+      priceChangePercent: 1.20,
+      pointsContributed: 22.5,
+      direction: 'positive',
+      observedData: 'Added ₹14.80 (+1.20%), crossing ₹1,245 hurdle on steady cash volume.',
+      aiExplanation: 'Systemic credit growth alignment and healthy net interest margin stability expectations.',
+    },
+    {
+      symbol: 'TATASTEEL',
+      name: 'Tata Steel Ltd',
+      priceChangePercent: 2.49,
+      pointsContributed: 14.2,
+      direction: 'positive',
+      observedData: 'Advanced ₹3.85 (+2.49%) with 38.2M shares traded.',
+      aiExplanation: 'European green transition subsidy signoff and Chinese infrastructure stimulus optimism.',
+    },
+  ],
+  topNegativeContributors: [
+    {
+      symbol: 'INFY',
+      name: 'Infosys Ltd',
+      priceChangePercent: -0.64,
+      pointsContributed: -16.4,
+      direction: 'negative',
+      observedData: 'Declined ₹12.10 (-0.64%) on 5.8M shares traded.',
+      aiExplanation: 'Mild consolidation following recent run-up; caution around US election macro spending timeline.',
+    },
+    {
+      symbol: 'TCS',
+      name: 'Tata Consultancy Services Ltd',
+      priceChangePercent: -0.44,
+      pointsContributed: -11.2,
+      direction: 'negative',
+      observedData: 'Shed ₹18.75 (-0.44%), drifting below 20-day moving average.',
+      aiExplanation: 'Sector-wide rotation out of IT exporters into domestic cyclical banks and autos.',
+    },
+  ],
+  netSectorImpact: [
+    { sector: 'Banking & Financials', points: 72.8 },
+    { sector: 'Automobiles', points: 41.5 },
+    { sector: 'Oil & Gas / Energy', points: 34.2 },
+    { sector: 'Metals & Mining', points: 19.8 },
+    { sector: 'Information Technology', points: -27.6 },
+    { sector: 'Real Estate', points: -4.1 },
+  ],
+  synthesis: 'The net +142.6 points gain was overwhelmingly driven by private banking (+72.8 pts) and auto champions (+41.5 pts), more than neutralizing the -27.6 pts drag from IT exporters. Market breadth confirms organic capital rotation rather than narrow single-stock manipulation.',
+};
